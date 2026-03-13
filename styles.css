@@ -616,7 +616,76 @@ body {
     font-size: 0.8rem;
 }
 
-/* Responsive */
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .app-container {
+        padding: 1rem 0.75rem;
+        gap: 1rem;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .calculator-card {
+        padding: 1.5rem;
+        min-height: auto;
+    }
+
+    .calculator-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .input-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .circle-display {
+        width: 160px;
+        height: 160px;
+    }
+
+    .result-value {
+        font-size: 2.75rem;
+    }
+
+    .info-hub {
+        margin-top: 2rem;
+        gap: 1.5rem;
+    }
+
+    .info-card {
+        padding: 1.5rem;
+    }
+
+    .faq-item {
+        padding: 1.25rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .calculate-btn, .reset-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .tabs {
+        gap: 0.5rem;
+    }
+
+    .tab-item {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .logo h1 {
+        font-size: 1.75rem;
+    }
+}
 /* New UI Elements */
 .radio-group {
     display: flex;
