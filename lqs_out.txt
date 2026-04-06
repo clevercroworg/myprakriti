@@ -1,0 +1,228 @@
+Life Quality Score Assessment
+Clinical Dietitian Edition — Chronic Condition Patients
+Holistic assessment across 5 evidence-based domains
+About This Assessment
+This Life Quality Score (LQS) Assessment has been designed for clinical dietitians working with patients managing chronic conditions including Type 2 Diabetes, Obesity, Metabolic Syndrome, Hypertension, and related comorbidities.
+The assessment covers 5 domains: Diet & Nutrition, Physical Activity, Sleep Quality, Stress & Mental Well-being, and Emotional Health. Each domain contains 5 questions with 4 scored response options.
+Each question is scored 1–4, where 1 = most concerning and 4 = optimal. Domain scores and an overall Life Quality Score are calculated as described in the Scoring Guide section.
+🥦  Domain 1: Diet & Nutrition
+Q1.  How many servings of vegetables and fruits do you consume daily? (1 serving = 1 cup raw or half cup cooked)
+  Score 1:  0–1 servings — rarely eat vegetables or fruits
+  Score 2:  2–3 servings — occasional vegetables or fruits
+  Score 3:  4–5 servings — regular intake most days
+  Score 4:  6+ servings — consistently high plant food intake
+Clinical note: Low vegetable intake is a primary risk factor for poor glycaemic control in Type 2 Diabetes and contributes to inflammation in obesity.
+Q2.  How often do you consume ultra-processed foods? (fast food, packaged snacks, sweetened beverages, instant noodles)
+  Score 1:  Daily — multiple times per day
+  Score 2:  Most days — at least once per day
+  Score 3:  Occasionally — 2–3 times per week
+  Score 4:  Rarely or never — less than once per week
+Clinical note: Ultra-processed foods are strongly associated with insulin resistance, dyslipidaemia, and weight gain in chronic condition patients.
+Q3.  How often do you eat home-cooked meals versus restaurant or takeaway food?
+  Score 1:  Almost always eating out or ordering in
+  Score 2:  More often outside than home-cooked
+  Score 3:  More often home-cooked than outside
+  Score 4:  Almost always home-cooked meals
+Clinical note: Home cooking allows better portion control and ingredient quality, both critical for managing diabetes and obesity.
+Q4.  How many glasses of plain water do you drink daily? (exclude tea, coffee, juices)
+  Score 1:  Less than 4 glasses — severely under-hydrated
+  Score 2:  4–6 glasses — below recommended intake
+  Score 3:  7–8 glasses — near adequate hydration
+  Score 4:  8+ glasses — well-hydrated consistently
+Clinical note: Adequate hydration supports kidney function, blood glucose regulation, and metabolism — especially critical in diabetes and obesity.
+Q5.  How would you describe your meal timing and eating pattern throughout the day?
+  Score 1:  Irregular — often skip meals or binge at night
+  Score 2:  Inconsistent — miss 1–2 meals regularly
+  Score 3:  Mostly regular — occasional missed meals
+  Score 4:  Very regular — consistent meal times every day
+Clinical note: Irregular meal patterns cause blood sugar fluctuations and disrupt hunger hormones (ghrelin/leptin), worsening chronic condition outcomes.
+🏃  Domain 2: Physical Activity
+Q1.  How many days per week do you engage in at least 30 minutes of moderate physical activity? (brisk walking, cycling, swimming)
+  Score 1:  0 days — completely sedentary
+  Score 2:  1–2 days — low activity level
+  Score 3:  3–4 days — moderate activity level
+  Score 4:  5–7 days — high activity level
+Clinical note: WHO recommends 150 min/week moderate activity for adults with chronic conditions. Even 10-min walks after meals improve post-meal blood glucose.
+Q2.  How long do you typically sit or remain sedentary without movement during a typical day?
+  Score 1:  8+ hours of continuous sitting
+  Score 2:  6–8 hours with minimal movement breaks
+  Score 3:  4–6 hours with some short movement breaks
+  Score 4:  Less than 4 hours — regularly break up sitting
+Clinical note: Prolonged sitting independently increases insulin resistance and cardiovascular risk, even in physically active individuals.
+Q3.  Do you engage in any strength or resistance training? (weights, resistance bands, bodyweight exercises)
+  Score 1:  Never — no resistance training at all
+  Score 2:  Rarely — once a month or less
+  Score 3:  Sometimes — 1–2 times per week
+  Score 4:  Regularly — 2–3 times per week or more
+Clinical note: Resistance training builds muscle mass, which is the primary site of glucose disposal — directly improving insulin sensitivity in T2DM.
+Q4.  How do you typically get around for short distances? (less than 1 km)
+  Score 1:  Always use vehicle — never walk
+  Score 2:  Usually drive — walk only if necessary
+  Score 3:  Mix of walking and vehicle
+  Score 4:  Walk or cycle for most short distances
+Clinical note: Incidental walking (non-exercise activity thermogenesis / NEAT) contributes significantly to daily calorie expenditure and metabolic health.
+Q5.  How would you describe your overall physical energy and stamina for daily tasks?
+  Score 1:  Very low — exhausted by minor tasks
+  Score 2:  Low — tire quickly with moderate effort
+  Score 3:  Moderate — manage most tasks with some fatigue
+  Score 4:  Good — handle daily tasks comfortably
+Clinical note: Persistent fatigue in chronic condition patients may indicate poor metabolic control, anaemia, or deconditioning — all addressable through nutrition.
+😴  Domain 3: Sleep Quality
+Q1.  How many hours of sleep do you typically get on weeknights?
+  Score 1:  Less than 5 hours — severely sleep-deprived
+  Score 2:  5–6 hours — below recommended
+  Score 3:  7–8 hours — within recommended range
+  Score 4:  8–9 hours — adequate to optimal sleep
+Clinical note: Sleep deprivation elevates cortisol and ghrelin, disrupts insulin sensitivity, and increases appetite for high-carb foods — directly worsening diabetes and obesity.
+Q2.  How often do you wake up during the night and have difficulty going back to sleep?
+  Score 1:  Almost every night — severe sleep disruption
+  Score 2:  Several nights per week — frequent disruption
+  Score 3:  Occasionally — once or twice a week
+  Score 4:  Rarely — sleep through most nights
+Clinical note: Fragmented sleep reduces deep (slow-wave) sleep, which is when growth hormone is secreted and cellular repair occurs.
+Q3.  How often do you wake up in the morning feeling refreshed and rested?
+  Score 1:  Almost never — always wake up tired
+  Score 2:  Rarely — most mornings feel unrefreshed
+  Score 3:  Sometimes — feel rested about half the time
+  Score 4:  Most mornings — usually wake up refreshed
+Clinical note: Unrefreshing sleep may indicate obstructive sleep apnoea, which is common in obesity and strongly linked to insulin resistance.
+Q4.  What time do you typically go to bed on weeknights?
+  Score 1:  After 1:00 AM — very late bedtime
+  Score 2:  Between 12:00 AM and 1:00 AM
+  Score 3:  Between 10:30 PM and 12:00 AM
+  Score 4:  Before 10:30 PM — early, consistent bedtime
+Clinical note: Late chronotype (sleeping late) is associated with higher BMI, worse glycaemic control, and higher HbA1c in T2DM patients.
+Q5.  How often do you use screens (phone, TV, laptop) within 30 minutes of going to bed?
+  Score 1:  Every night — always use screens at bedtime
+  Score 2:  Most nights — 5–6 nights per week
+  Score 3:  Occasionally — 2–3 nights per week
+  Score 4:  Rarely — almost never use screens before bed
+Clinical note: Blue light from screens suppresses melatonin production, delaying sleep onset and reducing sleep quality — especially disruptive in patients with neuropathy or pain.
+🧘  Domain 4: Stress & Mental Well-being
+Q1.  How often do you feel overwhelmed, anxious, or unable to cope with your daily responsibilities?
+  Score 1:  Almost daily — constantly overwhelmed
+  Score 2:  Several times per week — frequent stress
+  Score 3:  Occasionally — once or twice a week
+  Score 4:  Rarely — generally feel in control
+Clinical note: Chronic stress triggers cortisol release, which raises blood glucose, promotes visceral fat accumulation, and accelerates insulin resistance.
+Q2.  Do you have any regular stress-management practices? (deep breathing, meditation, prayer, journaling, hobby)
+  Score 1:  None — no stress-relief practices at all
+  Score 2:  Rarely — only in crisis situations
+  Score 3:  Sometimes — a few times a week
+  Score 4:  Daily — consistent stress-relief routine
+Clinical note: Even 5–10 minutes of mindfulness daily has been shown to lower HbA1c and improve dietary adherence in patients with T2DM.
+Q3.  How often does work, family, or financial stress lead you to eat unhealthy foods or overeat?
+  Score 1:  Very often — stress eating is a major issue
+  Score 2:  Often — eat unhealthy when stressed
+  Score 3:  Sometimes — occasional stress eating
+  Score 4:  Rarely — stress rarely affects eating
+Clinical note: Emotional/stress eating is a key behaviour pattern in obesity. Addressing it through nutrition counselling significantly improves long-term weight outcomes.
+Q4.  How supported do you feel by family or friends in managing your health condition?
+  Score 1:  Not at all supported — facing it alone
+  Score 2:  Minimal support — rarely get encouragement
+  Score 3:  Some support — occasional help and understanding
+  Score 4:  Well supported — family actively helps
+Clinical note: Social support is one of the strongest predictors of dietary adherence and medication compliance in patients with chronic conditions.
+Q5.  How often do you feel hopeful or positive about your ability to manage and improve your health condition?
+  Score 1:  Rarely — feel hopeless about my condition
+  Score 2:  Sometimes — mixed feelings about outcomes
+  Score 3:  Often — generally positive with some doubt
+  Score 4:  Almost always — confident and motivated
+Clinical note: Self-efficacy and positive outlook are strongly predictive of treatment adherence and health outcomes in both T2DM and obesity management.
+💚  Domain 5: Emotional Health
+Q1.  How would you describe your overall relationship with food and eating on a daily basis?
+  Score 1:  Very stressful — eating causes guilt and anxiety
+  Score 2:  Complicated — food is often a source of shame
+  Score 3:  Neutral — mostly eat without strong emotions
+  Score 4:  Positive — enjoy eating mindfully and guilt-free
+Clinical note: A negative relationship with food is associated with binge-eating disorder, yo-yo dieting, and poor long-term weight management in obese patients.
+Q2.  How often do you experience positive emotions — such as joy, contentment, gratitude, or connection — during your week?
+  Score 1:  Rarely — most days feel heavy or joyless
+  Score 2:  Occasionally — a few positive moments weekly
+  Score 3:  Often — positive feelings on most days
+  Score 4:  Daily — regularly experience positive emotions
+Clinical note: Positive emotional states support healthier food choices, better sleep, and improved immune function — all crucial for chronic condition management.
+Q3.  Do you feel your chronic condition (diabetes, obesity, etc.) affects your self-image or confidence?
+  Score 1:  Severely — it strongly impacts my self-worth
+  Score 2:  Quite a bit — often feel defined by my condition
+  Score 3:  Somewhat — occasional self-image concerns
+  Score 4:  Minimally — condition does not define me
+Clinical note: Negative self-image and health-related stigma are barriers to seeking care and adhering to dietary changes — addressing this is key in clinical nutrition counselling.
+Q4.  How often do you eat in response to emotions like boredom, loneliness, sadness, or frustration?
+  Score 1:  Very often — emotional eating is a daily pattern
+  Score 2:  Often — several times a week
+  Score 3:  Sometimes — occasionally eat emotionally
+  Score 4:  Rarely — generally eat only when physically hungry
+Clinical note: Emotional eating is a major driver of obesity and poor glycaemic control. Identification and intervention by a dietitian is highly effective in managing this.
+Q5.  How motivated do you currently feel to make changes to your diet and lifestyle for your health?
+  Score 1:  Not motivated — not ready to make changes
+  Score 2:  Somewhat motivated — thinking about it
+  Score 3:  Motivated — willing but need guidance
+  Score 4:  Highly motivated — ready and committed to change
+Clinical note: Readiness to change (based on Transtheoretical Model) determines which nutrition intervention strategy to use — from motivational interviewing to structured meal plans.
+Scoring Guide & Interpretation
+How Scoring Works
+Each question has 4 response options scored on a 1–4 scale:
+Score
+Level
+Interpretation
+1
+Critical / Needs urgent attention
+Behaviour or condition is significantly impacting health and requires immediate clinical focus.
+2
+Below average / Concerning
+Some improvement has been made but the behaviour is still below recommended levels for chronic condition management.
+3
+Moderate / On the right track
+Behaviour meets basic health guidelines. Further optimisation is recommended to fully support chronic condition management.
+4
+Optimal / Keep maintaining
+Behaviour is at or above recommended levels. Maintain and use as a strength to support lower-scoring domains.
+Domain Score Calculation
+Each domain has 5 questions, each scored 1–4.
+Raw Domain Score  =  Sum of all 5 question scores  (range: 5–20)
+Domain Score (out of 100)  =  (Raw Score / 20) x 100
+Raw Score
+Domain Score
+Category
+5–8
+25–40 / 100
+Critical — Immediate clinical intervention needed
+9–12
+45–60 / 100
+Moderate — Significant improvement opportunities
+13–16
+65–80 / 100
+Good — On track, fine-tuning recommended
+17–20
+85–100 / 100
+Excellent — Maintain and support other domains
+Overall Life Quality Score (LQS)
+The overall LQS is the average of all 5 domain scores:
+Overall LQS  =  (Sum of all 5 Domain Scores) / 5
+LQS Range
+Band
+Recommended Action
+0–39
+Critical
+Comprehensive multi-domain intervention needed urgently. Prioritise by lowest domain scores.
+40–59
+Needs Attention
+Multiple domains below target. Structured nutrition and lifestyle counselling recommended.
+60–74
+Moderate
+Foundation is building. Target the 1–2 lowest domains with specific behaviour-change strategies.
+75–89
+Good
+Strong foundation. Continue current practices and optimise remaining gaps.
+90–100
+Excellent
+Maintain current behaviours. Schedule periodic reassessment every 3–6 months.
+Using LQS in Clinical Practice
+1.  Administer at first consultation as a baseline assessment.
+2.  Identify the 1–2 lowest-scoring domains as the primary focus for nutrition counselling.
+3.  Re-administer every 8–12 weeks to track progress and adjust the intervention plan.
+4.  Use domain scores to guide referrals — low Sleep score may warrant a sleep study; low Emotional Health score may benefit from referral to a psychologist.
+5.  Share the score with the patient using the visual dashboard tool to increase engagement and motivation.
+This assessment template was created for clinical use by a qualified dietitian.
+Always supplement with clinical biochemistry data (HbA1c, BMI, lipid panel) for complete patient assessment.

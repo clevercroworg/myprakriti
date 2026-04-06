@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const activity = activityEl ? parseFloat(activityEl.value) : 1.2;
         const stress = getVal('stress');
         const modification = parseFloat(document.getElementById('goal').value) || 0;
+        const thigh = getVal('thigh');
 
         if (!weight || !height || !age) return;
 
@@ -135,6 +136,26 @@ document.addEventListener('DOMContentLoaded', () => {
             updateCard('bfp', 'green', 'Need Measurements', 0, 'Enter neck and waist measurements to calculate body fat.');
         }
 
+        // 7. Thigh Metric (TWR)
+        let thighRisk = 0;
+        if (thigh && waist) {
+            const twr = (thigh / waist).toFixed(2);
+            setRes('res-thigh', twr);
+            let tColor = "green", tBadge = "Healthy TWR", tDesc = "A higher thigh-to-waist ratio suggests more leg muscle relative to visceral fat — a strong marker of metabolic health.";
+            let tProg = 80;
+            if (twr < 0.45) {
+                tColor = "orange"; tBadge = "Higher Risk"; tProg = 30; thighRisk = 2;
+                tDesc = "A lower ratio can indicate less muscle mass or higher abdominal fat. Aiming for leg strength training may help.";
+            } else if (thigh < 55) {
+                tBadge = "Sub-optimal Girth"; tProg = 50;
+                tDesc = "Thigh circumference below 55cm can be associated with increased metabolic risk in some clinical studies.";
+            }
+            updateCard('thigh', tColor, tBadge, tProg, tDesc);
+        } else {
+            setRes('res-thigh', '--');
+            updateCard('thigh', 'green', 'Need Measurements', 0, 'Enter thigh and waist measurements for metabolic risk profile.');
+        }
+
         // Header Population
         const userName = document.getElementById('user-name') ? document.getElementById('user-name').value : "Client";
         setRes('report-name', userName ? `${userName}'s Body Composition Report` : 'Your Body Composition Report');
@@ -149,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setRes('rep-activity', activityText);
 
         // Overall Assessment Logic
-        let totalRisks = (bmi >= 25 ? 1 : 0) + (whrRisk === 2 ? 1 : 0) + (ibwColor === 'orange' ? 1 : 0) + (bfpRisk === 2 ? 1 : 0);
+        let totalRisks = (bmi >= 25 ? 1 : 0) + (whrRisk === 2 ? 1 : 0) + (ibwColor === 'orange' ? 1 : 0) + (bfpRisk === 2 ? 1 : 0) + (thighRisk === 2 ? 1 : 0);
         let asTitle = "Optimal Composition", asDesc = "Your overall body composition is excellent. Keep up the great work maintaining this balance.";
         
         if (totalRisks === 1 || totalRisks === 2) {
@@ -353,17 +374,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 const ibw = document.getElementById('res-ibw')?.innerText || '--';
                 const whr = document.getElementById('res-whr')?.innerText || '--';
                 const bfp = document.getElementById('res-bfp')?.innerText || '--';
+                const thighVal = document.getElementById('res-thigh')?.innerText || '--';
                 const target = document.getElementById('res-target')?.innerText || '--';
 
                 const bmiBadge = document.getElementById('badge-bmi')?.innerText || '--';
                 const ibwBadge = document.getElementById('badge-ibw')?.innerText || '--';
                 const whrBadge = document.getElementById('badge-whr')?.innerText || '--';
                 const bfpBadge = document.getElementById('badge-bfp')?.innerText || '--';
+                const thighBadge = document.getElementById('badge-thigh')?.innerText || '--';
 
                 const bmiDesc = document.getElementById('desc-bmi')?.innerText || '';
                 const ibwDesc = document.getElementById('desc-ibw')?.innerText || '';
                 const whrDesc = document.getElementById('desc-whr')?.innerText || '';
                 const bfpDesc = document.getElementById('desc-bfp')?.innerText || '';
+                const thighDesc = document.getElementById('desc-thigh')?.innerText || '';
                 const bmrDesc = document.getElementById('desc-bmr')?.innerText || '';
                 const tdeeDesc = document.getElementById('desc-tdee')?.innerText || '';
                 
@@ -463,7 +487,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     { title: 'TDEE', sub: 'Total Daily Energy Expenditure', value: tdee, unit: 'kcal/day', badge: 'Your total calorie need', desc: tdeeDesc, color: 'blue' },
                     { title: 'IDEAL WEIGHT', sub: 'Ideal Body Weight', value: ibw, unit: 'kg', badge: ibwBadge, desc: ibwDesc, color: 'orange' },
                     { title: 'WHR', sub: 'Waist to Hip Ratio', value: whr, unit: 'ratio', badge: whrBadge, desc: whrDesc, color: whr !== '--' && parseFloat(whr) <= (gender === 'male' ? 0.9 : 0.85) ? 'green' : 'orange' },
-                    { title: 'BODY FAT', sub: 'Body Fat Percentage', value: bfp, unit: '%', badge: bfpBadge, desc: bfpDesc, color: bfp !== '--' && parseFloat(bfp) < (gender === 'male' ? 25 : 32) ? 'green' : 'orange' }
+                    { title: 'BODY FAT', sub: 'Body Fat Percentage', value: bfp, unit: '%', badge: bfpBadge, desc: bfpDesc, color: bfp !== '--' && parseFloat(bfp) < (gender === 'male' ? 25 : 32) ? 'green' : 'orange' },
+                    { title: 'THIGH PROFILE', sub: 'Thigh-to-Waist Ratio', value: thighVal, unit: 'ratio', badge: thighBadge, desc: thighDesc, color: thighVal !== '--' && parseFloat(thighVal) >= 0.45 ? 'green' : 'orange' }
                 ];
 
                 const colorMap = {

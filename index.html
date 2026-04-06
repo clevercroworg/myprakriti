@@ -29,6 +29,12 @@
                 <img src="assets/Prakriti - logo.png" alt="MyPrakrit Logo" class="logo-img">
             </div>
             <p class="subtitle">Your ultimate health companion</p>
+            
+            <div style="margin-top: 15px;">
+                <a href="lqs-assessment.html" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(14, 165, 233, 0.1); border: 1px solid var(--primary-color); color: var(--primary-color); padding: 10px 20px; border-radius: 12px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+                    <i data-lucide="clipboard-list" style="width: 18px; height: 18px;"></i> Take Life Quality Assessment
+                </a>
+            </div>
         </header>
 
 
@@ -87,6 +93,10 @@
                             <div class="input-group">
                                 <label for="hip">Hip Width (cm)</label>
                                 <input type="number" id="hip" placeholder="0.0" step="0.1">
+                            </div>
+                            <div class="input-group">
+                                <label for="thigh">Thigh Girth (cm)</label>
+                                <input type="number" id="thigh" placeholder="0.0" step="0.1">
                             </div>
                         </div>
                     </div>
@@ -306,6 +316,23 @@
                                 <p class="metric-desc" id="desc-bfp">--</p>
                             </div>
 
+                            <!-- Thigh Girth Card -->
+                            <div class="metric-card" id="card-thigh">
+                                <div class="metric-header">
+                                    <div class="metric-icon-row"><i data-lucide="dumbbell"></i><span class="metric-title">THIGH PROFILE</span></div>
+                                    <span class="metric-subtitle">Thigh-to-Waist Ratio</span>
+                                </div>
+                                <div class="metric-value-row">
+                                    <span class="metric-value count-up" id="res-thigh" data-target="0">--</span>
+                                    <span class="metric-unit">ratio</span>
+                                </div>
+                                <div class="metric-badge" id="badge-thigh">--</div>
+                                <div class="metric-progress-wrapper">
+                                    <div class="metric-progress" id="prog-thigh" style="width: 0%;"></div>
+                                </div>
+                                <p class="metric-desc" id="desc-thigh">--</p>
+                            </div>
+
                         </div>
 
                         <!-- Calorie Breakdown Section -->
@@ -446,6 +473,20 @@
                     <div class="faq-item">
                         <div class="faq-question">What is a good WHR?</div>
                         <div class="faq-answer">For men, a ratio of 0.90 or less is considered safe. For women, a ratio of 0.85 or less is considered safe.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="info-thigh" class="info-tab-content">
+                <div class="faq-section">
+                    <h3>Thigh Metric Information & FAQs</h3>
+                    <div class="faq-item">
+                        <div class="faq-question">What is Thigh-to-Waist Ratio (TWR)?</div>
+                        <div class="faq-answer">TWR compares the circumference of your thigh to your waist. A higher ratio is generally healthier, as it indicates more lower-body muscle mass relative to abdominal fat.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Why does Thigh Girth matter?</div>
+                        <div class="faq-answer">Clinical studies suggest that a thigh circumference of less than 60cm is associated with an increased risk of cardiovascular and metabolic issues. Maintaining leg muscle is a key component of long-term metabolic health.</div>
                     </div>
                 </div>
             </div>
