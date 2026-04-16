@@ -14,6 +14,9 @@
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
     </div>
+    <div class="top-bar">
+        <span class="top-bar-title">Your Personal Wellness Hub</span>
+    </div>
 
     <div class="app-container home-container">
         <header class="header" style="text-align: center; margin-bottom: 1rem;">
@@ -22,33 +25,113 @@
                     <img src="assets/Prakriti - logo.png" alt="MyPrakrit Logo" class="logo-img" style="height: 140px; width: auto; object-fit: contain;">
                 </a>
             </div>
-            <h1 class="main-heading" style="font-size: 3rem; font-weight: 800; color: var(--secondary); margin-bottom: 0.5rem; line-height: 1.2;">Your Personal Wellness Hub</h1>
-            <p class="subtitle" style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Complete your personalized assessments and explore our latest health articles to optimize your well-being.</p>
+            <p class="subtitle" style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Track your health, build better habits, and feel your best.</p>
         </header>
+
+        <style>
+            .top-bar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.35rem 1rem;
+                background-color: #065f46; /* Matching deep logo green */
+            }
+            .top-bar-title {
+                font-family: var(--font-main);
+                font-size: 0.85rem;
+                font-weight: 600;
+                color: #ffffff;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+            
+            .nav-card.bg-orange {
+                background-color: var(--primary) !important;
+            }
+            .nav-card.bg-orange h3, .nav-card.bg-orange p, .nav-card.bg-orange i {
+                color: #ffffff !important;
+            }
+            .nav-card.bg-orange .nav-card-icon, .nav-card.bg-orange .nav-card-arrow {
+                background-color: rgba(255, 255, 255, 0.2) !important;
+            }
+
+            .nav-card.bg-blue {
+                background-color: var(--accent) !important;
+            }
+            .nav-card.bg-blue h3, .nav-card.bg-blue p, .nav-card.bg-blue i {
+                color: #ffffff !important;
+            }
+            .nav-card.bg-blue .nav-card-icon, .nav-card.bg-blue .nav-card-arrow {
+                background-color: rgba(255, 255, 255, 0.2) !important;
+            }
+            
+            @media screen and (max-width: 768px) {
+                .top-bar {
+                    padding: 0.5rem 1rem;
+                }
+                .top-bar-title {
+                    font-size: 0.95rem;
+                }
+                
+                /* Mobile 2-grid for cards */
+                .cards-grid {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                    gap: 0.75rem !important;
+                }
+                .nav-card {
+                    padding: 1.25rem 0.5rem !important;
+                    min-height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                }
+                .nav-card-icon {
+                    width: 50px !important;
+                    height: 50px !important;
+                    font-size: 1.5rem !important;
+                    margin-bottom: 0.5rem !important;
+                }
+                .nav-card-content h3 {
+                    font-size: 1rem !important;
+                    margin-bottom: 0.5rem !important;
+                    line-height: 1.2;
+                }
+                .nav-card-arrow {
+                    margin-top: 0.5rem !important;
+                    display: flex !important; /* Ensure arrows are back */
+                    width: 36px !important;
+                    height: 36px !important;
+                    transform: rotate(0deg) !important; /* Point right */
+                }
+            }
+        </style>
 
         <!-- Calculators Section -->
         <section class="calculators-section">
-            <h2 class="section-title"><i class="fa-solid fa-calculator"></i> Your Assessments</h2>
             <div class="cards-grid">
-                 <a href="health-calculator.html" class="nav-card">
-                    <div class="nav-card-icon bg-primary-light">
-                        <i class="fa-solid fa-heart-pulse text-primary"></i>
+                 <a href="health-calculator.html" class="nav-card bg-orange">
+                    <div class="nav-card-icon">
+                        <i class="fa-solid fa-heart-pulse"></i>
                     </div>
                     <div class="nav-card-content">
                         <h3>Personal Health Calculator</h3>
-                        <p>Calculate your BMI, daily calorie needs, and get personalized health metrics in a beautifully designed report.</p>
                     </div>
                     <div class="nav-card-arrow">
                         <i class="fa-solid fa-arrow-right"></i>
                     </div>
                  </a>
-                 <a href="lqs-assessment.html" class="nav-card">
-                    <div class="nav-card-icon bg-accent-light">
-                        <i class="fa-solid fa-leaf text-accent"></i>
+                 <a href="lqs-assessment.html" class="nav-card bg-blue">
+                    <div class="nav-card-icon">
+                        <i class="fa-solid fa-leaf"></i>
                     </div>
                     <div class="nav-card-content">
                         <h3>Life Quality Assessment</h3>
-                        <p>Evaluate your lifestyle, mental well-being, and get a comprehensive life quality score to improve your daily habits.</p>
                     </div>
                     <div class="nav-card-arrow">
                         <i class="fa-solid fa-arrow-right"></i>
