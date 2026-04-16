@@ -49,33 +49,12 @@
     z-index: 1;
 }
 
-.nav-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 6px;
-    height: 100%;
-    background: var(--primary);
-    transform: scaleY(0);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    transform-origin: bottom;
-    z-index: -1;
-}
-
-.nav-card:nth-child(2)::before {
-    background: var(--accent);
-}
-
 .nav-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
     border-color: var(--border-dark);
 }
 
-.nav-card:hover::before {
-    transform: scaleY(1);
-}
 
 .nav-card-icon {
     width: 80px;
