@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Health & Wellness Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="top-bar">
+        <span class="top-bar-title">Content Management System</span>
+        <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Site</a>
+    </div>
+
+    <div class="app-container admin-container">
+        <header class="header text-center">
+            <h1 class="page-title"><i class="fa-solid fa-sliders"></i> Admin Dashboard</h1>
+            <p class="subtitle">Manage homepage blog articles from this interface.</p>
+        </header>
+
+        <section class="admin-grid">
+            <!-- Form Section -->
+            <div class="admin-card">
+                <h2 id="form-title"><i class="fa-solid fa-pen-to-square"></i> Add New Article</h2>
+                <form id="blog-form">
+                    <input type="hidden" id="blog-id">
+                    
+                    <div class="form-group">
+                        <label for="blog-title">Article Title</label>
+                        <input type="text" id="blog-title" required placeholder="e.g., The Importance of Hydration">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="blog-category">Category</label>
+                        <select id="blog-category" required>
+                            <option value="Nutrition">Nutrition</option>
+                            <option value="Fitness">Fitness</option>
+                            <option value="Mental Health">Mental Health</option>
+                            <option value="General">General</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="blog-excerpt">Excerpt</label>
+                        <textarea id="blog-excerpt" required placeholder="Brief summary of the article..." rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Article Image</label>
+                        <input type="file" id="blog-image-upload" accept="image/*">
+                        <input type="hidden" id="blog-image-data">
+                        <div id="image-upload-preview" style="margin-top: 10px; display: none;">
+                            <img id="upload-preview-img" src="" style="max-height: 150px; border-radius: 8px; border: 1px solid #cbd5e1;">
+                            <button type="button" id="btn-remove-image" class="btn btn-danger" style="margin-top: 5px; display: block;">Remove Image</button>
+                        </div>
+                        <small>Upload an image from your computer. (It will be saved to local storage)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="blog-content">Full Article Content (HTML Supported)</label>
+                        <textarea id="blog-content" required placeholder="Write the full content of your article here. You can use HTML tags like <p>, <h2>, <strong>, etc." rows="10"></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="btn-cancel" class="btn btn-secondary hidden">Cancel</button>
+                        <button type="submit" id="btn-save" class="btn btn-primary">Save Article</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- List Section -->
+            <div class="admin-card">
+                <h2><i class="fa-solid fa-list"></i> Existing Articles</h2>
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Details</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="blog-list-body">
+                            <!-- Populated by admin.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- We need blogs.js to access default data if needed, but admin.js has the primary logic -->
+    <script src="blogs.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

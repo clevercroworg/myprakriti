@@ -143,36 +143,8 @@
         <!-- Blogs Section -->
         <section class="blogs-section fade-in">
             <h2 class="section-title"><i class="fa-solid fa-book-open"></i> Latest Health Articles</h2>
-            <div class="blogs-grid">
-                <article class="blog-card">
-                    <div class="blog-image img-placeholder-1"></div>
-                    <div class="blog-content">
-                        <span class="blog-category text-primary">Nutrition</span>
-                        <h3 class="blog-title">The Role of Macronutrients in Daily Energy</h3>
-                        <p class="blog-excerpt">Discover how balancing your proteins, fats, and carbs can stabilize your energy levels throughout the day and keep you focused.</p>
-                        <a href="#" class="read-more">Read Article <i class="fa-solid fa-chevron-right"></i></a>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image img-placeholder-2"></div>
-                    <div class="blog-content">
-                        <span class="blog-category text-accent">Fitness</span>
-                        <h3 class="blog-title">Building a Sustainable Workout Routine</h3>
-                        <p class="blog-excerpt">Tips and strategies to create a workout plan that you actually enjoy, preventing burnout and ensuring long-term success.</p>
-                        <a href="#" class="read-more">Read Article <i class="fa-solid fa-chevron-right"></i></a>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image img-placeholder-3">
-                        <!-- We use an image class for background -->
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-category text-green" style="color: var(--primary);">Mental Health</span>
-                        <h3 class="blog-title">Mindfulness Techniques for Busy Professionals</h3>
-                        <p class="blog-excerpt">Simple 5-minute practices to reduce stress, improve mental clarity, and elevate your overall quality of life in a fast-paced world.</p>
-                        <a href="#" class="read-more">Read Article <i class="fa-solid fa-chevron-right"></i></a>
-                    </div>
-                </article>
+            <div id="dynamic-blogs-grid" class="blogs-grid">
+                <!-- Blogs will be loaded dynamically by blogs.js -->
             </div>
         </section>
 
@@ -180,5 +152,6 @@
             <p>&copy; 2026 Health &amp; Wellness Hub. All rights reserved.</p>
         </footer>
     </div>
+    <script src="blogs.js"></script>
 </body>
 </html>

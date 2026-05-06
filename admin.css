@@ -1,0 +1,230 @@
+/* Admin Dashboard Styling */
+
+.admin-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.top-bar .back-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.top-bar .back-link:hover {
+    opacity: 0.8;
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+@media (max-width: 900px) {
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.admin-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.admin-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 10px;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #475569;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    background-color: #f8fafc;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+    background-color: #ffffff;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #64748b;
+    font-size: 0.8rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    flex: 1;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: #e2e8f0;
+    color: #475569;
+}
+
+.btn-secondary:hover {
+    background-color: #cbd5e1;
+}
+
+.btn-danger {
+    background-color: #fee2e2;
+    color: #ef4444;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+.btn-danger:hover {
+    background-color: #fca5a5;
+}
+
+.btn-edit {
+    background-color: #e0f2fe;
+    color: #0284c7;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+.btn-edit:hover {
+    background-color: #bae6fd;
+}
+
+/* Table Styles */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.admin-table th {
+    font-weight: 600;
+    color: #64748b;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: #f8fafc;
+}
+
+.admin-table td {
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+.admin-table tr:hover {
+    background-color: #f8fafc;
+}
+
+.admin-table .img-preview {
+    width: 60px;
+    height: 45px;
+    border-radius: 4px;
+    background-size: cover;
+    background-position: center;
+    background-color: #e2e8f0;
+    display: inline-block;
+}
+
+.admin-table .details-col h4 {
+    margin: 0 0 4px 0;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.admin-table .details-col .category-badge {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background: #f1f5f9;
+    color: #64748b;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.admin-table .actions-col {
+    display: flex;
+    gap: 8px;
+}
+
+.hidden {
+    display: none !important;
+}
