@@ -1,0 +1,22 @@
+# Environment variables (SENSITIVE — never commit)
+.env
+.env.local
+.env.production
+
+# Dependencies
+node_modules/
+
+# Uploaded images (stored on server, not in repo)
+uploads/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*

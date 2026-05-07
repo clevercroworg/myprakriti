@@ -1,10 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Check if blogs.js is loaded
-    if (typeof getBlogs !== 'function') {
-        console.error('blogs.js must be loaded before article.js');
-        return;
-    }
-
+document.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById('article-container');
     
     // Get article ID from URL parameters
@@ -16,24 +10,39 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    const blogs = getBlogs();
-    const article = blogs.find(b => b.id === articleId);
+    // Fetch article from API
+    try {
+        const res = await fetch(`/api/blogs/${articleId}`);
+        
+        if (!res.ok) {
+            // Fallback: try localStorage for static usage
+            const blogs = JSON.parse(localStorage.getItem('myprakrit_blogs') || '[]');
+            const localBlog = blogs.find(b => b.id === articleId);
+            if (localBlog) {
+                renderArticle(localBlog);
+                return;
+            }
+            throw new Error('Not found');
+        }
 
-    if (!article) {
+        const article = await res.json();
+        renderArticle(article);
+    } catch (err) {
         showError('Article Not Found', 'The article you are looking for does not exist or has been removed.');
-        return;
     }
 
-    renderArticle(article);
-
     function renderArticle(blog) {
-        // Handle image logic (URL vs Class)
+        // Handle image logic — support both imageUrl (API) and imageClass (legacy)
         let bgStyle = '';
         let addClass = '';
-        if (blog.imageClass && (blog.imageClass.startsWith('http') || blog.imageClass.startsWith('data:'))) {
-            bgStyle = `style="background-image: url('${blog.imageClass}');"`;
+        const imgSrc = blog.imageUrl || blog.imageClass || '';
+
+        if (imgSrc && (imgSrc.startsWith('http') || imgSrc.startsWith('/uploads') || imgSrc.startsWith('data:'))) {
+            bgStyle = `style="background-image: url('${imgSrc}');"`;
+        } else if (imgSrc && imgSrc.startsWith('img-placeholder')) {
+            addClass = imgSrc;
         } else {
-            addClass = blog.imageClass || 'img-placeholder-1';
+            addClass = 'img-placeholder-1';
         }
 
         const categoryColorClass = blog.categoryColor || 'text-primary';

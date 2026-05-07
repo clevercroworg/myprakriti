@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Health & Wellness Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated background orbs */
+        .login-bg-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: 0;
+            animation: orbFloat 8s ease-in-out infinite alternate;
+        }
+        .login-bg-orb.orb-1 {
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, #14b8a6, transparent);
+            top: -100px; left: -100px;
+        }
+        .login-bg-orb.orb-2 {
+            width: 350px; height: 350px;
+            background: radial-gradient(circle, #8b5cf6, transparent);
+            bottom: -100px; right: -100px;
+            animation-delay: 2s;
+        }
+        .login-bg-orb.orb-3 {
+            width: 250px; height: 250px;
+            background: radial-gradient(circle, #f59e0b, transparent);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: 4s;
+            opacity: 0.2;
+        }
+
+        @keyframes orbFloat {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(30px, -30px) scale(1.1); }
+        }
+
+        .login-container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 420px;
+            padding: 20px;
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 48px 36px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+            animation: cardSlideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes cardSlideIn {
+            from { opacity: 0; transform: translateY(30px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .login-logo {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .login-logo img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 12px rgba(20, 184, 166, 0.3));
+        }
+        .login-logo h1 {
+            font-family: 'PT Serif', serif;
+            font-size: 1.6rem;
+            color: #ffffff;
+            margin-top: 12px;
+            font-weight: 700;
+        }
+        .login-logo p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            margin-top: 6px;
+        }
+
+        .login-form .form-group {
+            margin-bottom: 20px;
+        }
+        .login-form label {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .login-form .input-wrapper {
+            position: relative;
+        }
+        .login-form .input-wrapper i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 14px 16px 14px 46px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            outline: none;
+            box-sizing: border-box;
+        }
+        .login-form input::placeholder {
+            color: rgba(255, 255, 255, 0.25);
+        }
+        .login-form input:focus {
+            border-color: #14b8a6;
+            background: rgba(20, 184, 166, 0.08);
+            box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15);
+        }
+        .login-form input:focus + i,
+        .login-form .input-wrapper:focus-within i {
+            color: #14b8a6;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(20, 184, 166, 0.4);
+        }
+        .btn-login:active {
+            transform: translateY(0);
+        }
+        .btn-login.loading {
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .login-error {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #fca5a5;
+            padding: 12px 16px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            display: none;
+            animation: errorShake 0.4s ease;
+        }
+        @keyframes errorShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-8px); }
+            75% { transform: translateX(8px); }
+        }
+
+        .back-home {
+            display: block;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-top: 24px;
+            transition: color 0.3s;
+        }
+        .back-home:hover {
+            color: #14b8a6;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-bg-orb orb-1"></div>
+    <div class="login-bg-orb orb-2"></div>
+    <div class="login-bg-orb orb-3"></div>
+
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-logo">
+                <img src="assets/Prakriti - logo.png" alt="MyPrakriti Logo">
+                <h1>Admin Portal</h1>
+                <p>Sign in to manage content</p>
+            </div>
+
+            <div id="login-error" class="login-error">
+                <i class="fa-solid fa-circle-exclamation"></i> <span id="error-text"></span>
+            </div>
+
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <label for="login-username">Username</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="login-username" placeholder="Enter your username" required autocomplete="username">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="login-password" placeholder="Enter your password" required autocomplete="current-password">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                </div>
+                <button type="submit" id="btn-login" class="btn-login">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In
+                </button>
+            </form>
+
+            <a href="index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Back to Website</a>
+        </div>
+    </div>
+
+    <script>
+        // Check if already logged in
+        fetch('/api/auth/check')
+            .then(res => res.json())
+            .then(data => {
+                if (data.authenticated) {
+                    window.location.href = 'admin.html';
+                }
+            })
+            .catch(() => {});
+
+        const loginForm = document.getElementById('login-form');
+        const loginError = document.getElementById('login-error');
+        const errorText = document.getElementById('error-text');
+        const btnLogin = document.getElementById('btn-login');
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const username = document.getElementById('login-username').value.trim();
+            const password = document.getElementById('login-password').value;
+
+            loginError.style.display = 'none';
+            btnLogin.classList.add('loading');
+            btnLogin.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Signing in...';
+
+            try {
+                const res = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await res.json();
+
+                if (res.ok) {
+                    btnLogin.innerHTML = '<i class="fa-solid fa-check"></i> Success!';
+                    btnLogin.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+                    setTimeout(() => {
+                        window.location.href = 'admin.html';
+                    }, 600);
+                } else {
+                    errorText.textContent = data.error || 'Login failed. Please try again.';
+                    loginError.style.display = 'block';
+                    btnLogin.classList.remove('loading');
+                    btnLogin.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In';
+                }
+            } catch (err) {
+                errorText.textContent = 'Network error. Is the server running?';
+                loginError.style.display = 'block';
+                btnLogin.classList.remove('loading');
+                btnLogin.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In';
+            }
+        });
+    </script>
+</body>
+</html>
