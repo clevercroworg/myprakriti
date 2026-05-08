@@ -22,42 +22,40 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
-if (!MONGODB_URI) {
-    console.error('❌ MONGODB_URI is not defined in the environment!');
-    // Don't exit process in serverless environment
+if (MONGODB_URI) {
+    mongoose.connect(MONGODB_URI)
+        .then(() => {
+            console.log('✅ Connected to MongoDB successfully!');
+        })
+        .catch((err) => {
+            console.error('❌ MongoDB connection error:', err.message);
+        });
 }
-
-mongoose.connect(MONGODB_URI)
-    .then(() => {
-        console.log('✅ Connected to MongoDB successfully!');
-    })
-    .catch((err) => {
-        console.error('❌ MongoDB connection error:', err.message);
-        // Don't exit process in serverless environment
-        if (process.env.NODE_ENV !== 'production') {
-            process.exit(1);
-        }
-    });
 
 // ============================================
 // SESSION CONFIGURATION
 // ============================================
 
-app.use(session({
+const sessionConfig = {
     secret: process.env.SESSION_SECRET || 'myprakriti_secret_key_2026',
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({
-        mongoUrl: MONGODB_URI,
-        collectionName: 'sessions',
-        ttl: 24 * 60 * 60 // 1 day
-    }),
     cookie: {
         maxAge: 24 * 60 * 60 * 1000, // 1 day
         httpOnly: true,
         secure: false // Set to true in production with HTTPS
     }
-}));
+};
+
+if (MONGODB_URI) {
+    sessionConfig.store = MongoStore.create({
+        mongoUrl: MONGODB_URI,
+        collectionName: 'sessions',
+        ttl: 24 * 60 * 60 // 1 day
+    });
+}
+
+app.use(session(sessionConfig));
 
 // ============================================
 // AUTH MIDDLEWARE
