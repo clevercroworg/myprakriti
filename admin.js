@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
     } catch (err) {
-        // If API is not available, allow access (static file fallback)
-        console.warn('Auth check failed, running in offline mode.');
+        console.error('Auth check failed:', err);
+        window.location.href = 'login.html';
     }
 
     // ============================================

@@ -16,6 +16,23 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
+// ============================================
+// AUTH MIDDLEWARE
+// ============================================
+
+function requireAuth(req, res, next) {
+    if (req.session && req.session.isAdmin) {
+        next();
+    } else {
+        res.redirect('/login.html');
+    }
+}
+
+// Protected route for admin page
+app.get('/admin.html', requireAuth, (req, res) => {
+    res.sendFile(path.join(__dirname, 'admin.html'));
+});
+
 // Serve static files (HTML, CSS, JS, assets)
 app.use(express.static(path.join(__dirname), {
     index: 'index.html'
