@@ -17,31 +17,6 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // ============================================
-// AUTH MIDDLEWARE
-// ============================================
-
-function requireAuth(req, res, next) {
-    if (req.session && req.session.isAdmin) {
-        next();
-    } else {
-        res.redirect('/login.html');
-    }
-}
-
-// Protected route for admin page
-app.get('/admin.html', requireAuth, (req, res) => {
-    res.sendFile(path.join(__dirname, 'admin.html'));
-});
-
-// Serve static files (HTML, CSS, JS, assets)
-app.use(express.static(path.join(__dirname), {
-    index: 'index.html'
-}));
-
-// Serve uploaded images
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
-// ============================================
 // MONGODB CONNECTION
 // ============================================
 
@@ -67,7 +42,7 @@ mongoose.connect(MONGODB_URI)
 // ============================================
 
 app.use(session({
-    secret: process.env.SESSION_SECRET || 'myprakriti-secret-2026',
+    secret: process.env.SESSION_SECRET || 'myprakriti_secret_key_2026',
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
@@ -81,6 +56,37 @@ app.use(session({
         secure: false // Set to true in production with HTTPS
     }
 }));
+
+// ============================================
+// AUTH MIDDLEWARE
+// ============================================
+
+function requireAuth(req, res, next) {
+    if (req.session && req.session.isAdmin) {
+        next();
+    } else {
+        res.redirect('/login.html');
+    }
+}
+
+// Protected route for admin page (must be BEFORE express.static)
+app.get('/admin.html', requireAuth, (req, res) => {
+    // Add cache-control headers to prevent the "flash" of unauthorized content
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+    res.setHeader('Surrogate-Control', 'no-store');
+    
+    res.sendFile(path.join(__dirname, 'admin.html'));
+});
+
+// Serve static files (HTML, CSS, JS, assets)
+app.use(express.static(path.join(__dirname), {
+    index: 'index.html'
+}));
+
+// Serve uploaded images
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // ============================================
 // API ROUTES
