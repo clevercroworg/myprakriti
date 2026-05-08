@@ -23,9 +23,8 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 const MONGODB_URI = process.env.MONGODB_URI;
 
 if (!MONGODB_URI) {
-    console.error('❌ MONGODB_URI is not defined in .env file!');
-    console.error('   Please add your MongoDB connection string to the .env file.');
-    process.exit(1);
+    console.error('❌ MONGODB_URI is not defined in the environment!');
+    // Don't exit process in serverless environment
 }
 
 mongoose.connect(MONGODB_URI)
@@ -139,6 +138,16 @@ if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
         console.log('');
     });
 }
+
+// Global Error Handler to prevent silent crashes on Vercel
+app.use((err, req, res, next) => {
+    console.error('Unhandled Application Error:', err);
+    res.status(500).json({
+        error: 'Internal Server Error',
+        message: err.message,
+        stack: process.env.NODE_ENV === 'production' ? '🥞' : err.stack
+    });
+});
 
 // Export the app for Vercel
 module.exports = app;
