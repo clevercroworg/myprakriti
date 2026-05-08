@@ -50,9 +50,9 @@ if (MONGODB_URI) {
 }
 
 // API Routes
-const blogRoutes = require('./routes/blogs');
-const authRoutes = require('./routes/auth');
-const uploadRoutes = require('./routes/upload');
+const blogRoutes = require('../routes/blogs');
+const authRoutes = require('../routes/auth');
+const uploadRoutes = require('../routes/upload');
 
 app.use('/api/blogs', blogRoutes);
 app.use('/api/auth', authRoutes);
