@@ -34,7 +34,10 @@ mongoose.connect(MONGODB_URI)
     })
     .catch((err) => {
         console.error('❌ MongoDB connection error:', err.message);
-        process.exit(1);
+        // Don't exit process in serverless environment
+        if (process.env.NODE_ENV !== 'production') {
+            process.exit(1);
+        }
     });
 
 // ============================================
@@ -100,6 +103,15 @@ app.use('/api/blogs', blogRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/upload', uploadRoutes);
 
+// Health check route
+app.get('/api/health', (req, res) => {
+    res.json({ 
+        status: 'OK', 
+        mongodb: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
+        environment: process.env.NODE_ENV || 'development'
+    });
+});
+
 // ============================================
 // CATCH-ALL (serve index.html for unknown routes)
 // ============================================
@@ -113,18 +125,20 @@ app.get('{*path}', (req, res) => {
     }
 });
 
-// ============================================
-// START SERVER
-// ============================================
+// Only start the server if we're not in a serverless environment (like Vercel)
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+    app.listen(PORT, () => {
+        console.log('');
+        console.log('🌿 ═══════════════════════════════════════════');
+        console.log('   Health & Wellness Hub — Server Running');
+        console.log('🌿 ═══════════════════════════════════════════');
+        console.log(`   🌐 Site:    http://localhost:${PORT}`);
+        console.log(`   🔑 Admin:   http://localhost:${PORT}/login.html`);
+        console.log(`   📡 API:     http://localhost:${PORT}/api/blogs`);
+        console.log('🌿 ═══════════════════════════════════════════');
+        console.log('');
+    });
+}
 
-app.listen(PORT, () => {
-    console.log('');
-    console.log('🌿 ═══════════════════════════════════════════');
-    console.log('   Health & Wellness Hub — Server Running');
-    console.log('🌿 ═══════════════════════════════════════════');
-    console.log(`   🌐 Site:    http://localhost:${PORT}`);
-    console.log(`   🔑 Admin:   http://localhost:${PORT}/login.html`);
-    console.log(`   📡 API:     http://localhost:${PORT}/api/blogs`);
-    console.log('🌿 ═══════════════════════════════════════════');
-    console.log('');
-});
+// Export the app for Vercel
+module.exports = app;
